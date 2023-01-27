@@ -1,0 +1,11 @@
+werc:
+  container_name: werc
+  build: .
+  restart: always
+  ports:
+    - "8089:80" # for testing purposes, (un)comment as required
+  volumes:
+    - $PWD/.:/var/www/localhost/htdocs
+    - $PWD/etc/lighttpd:/etc/lighttpd
+    - $PWD/sites:/var/www/werc/sites
+  tty: true
